@@ -6,7 +6,6 @@ import { Component, VERSION, Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Angular ' + VERSION.major;
   menuOpen: boolean = false;
   menuBtnClick: boolean = false;
 
