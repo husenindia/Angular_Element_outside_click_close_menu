@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -7,12 +7,19 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-
   menuOpen: boolean = false;
-  menuToggleClick: boolean = false;
+  menuBtnClick: boolean = false;
 
+  constructor(private renderer: Renderer2) {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (!this.menuBtnClick) {
+        this.menuOpen = false;
+      }
+      this.menuBtnClick = false;
+    });
+  }
   toggleMenu() {
-    this.menuOpen = true;
-    this.menuToggleClick = !this.menuToggleClick;
+    this.menuBtnClick = true;
+    this.menuOpen = !this.menuOpen;
   }
 }
