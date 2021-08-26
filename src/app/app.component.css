@@ -2,5 +2,8 @@ p {
   font-family: Lato;
 }
 ul {
-  background-color: #CCC;
+  background-color: #ccc;
+}
+.pointer-events {
+  pointer-events: none !important;
 }

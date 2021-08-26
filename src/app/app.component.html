@@ -1,5 +1,5 @@
 <button (click)="toggleMenu()">Toggle Menu</button>
-<ul *ngIf="menuOpen">
+<ul (click)="preventCloseOnClick()" *ngIf="menuOpen">
   <li>Menu 1</li>
   <li>Menu 2</li>
   <li>Menu 3</li>
