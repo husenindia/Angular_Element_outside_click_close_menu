@@ -18,7 +18,6 @@ export class AppComponent {
     });
   }
   toggleMenu() {
-    this.preventCloseOnClick();
     this.menuOpen = !this.menuOpen;
   }
   preventCloseOnClick() {
